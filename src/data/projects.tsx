@@ -236,463 +236,480 @@ export type Project = {
 };
 const projects: Project[] = [
   {
-    id: "codingducks",
-    category: "Coding platform",
-    title: "Coding Ducks",
-    src: "/assets/projects-screenshots/codingducks/landing.png",
-    screenshots: ["landing.png"],
+    id: "rudri-portfolio",
+    category: "Full Stack Platform",
+    title: "Rudri P — Blog & Research Papers Platform",
+    src: "/Portfolio Website/Screenshot 2025-12-18 104213.png",
+    screenshots: [
+      "Screenshot 2025-12-18 104213.png",
+      "Screenshot 2025-12-18 104322.png",
+      "Screenshot 2025-12-18 104352.png",
+      "Screenshot 2025-12-18 104432.png",
+    ],
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
         PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.reactQuery,
-        PROJECT_SKILLS.firebase,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
       ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.supabase,
         PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.sockerio,
+        PROJECT_SKILLS.node,
       ],
     },
-    live: "https://www.youtube.com/@heygenzcoder",
-    github: "https://www.youtube.com/@heygenzcoder",
+    live: "https://rudri-p-portfolio.vercel.app",
+    github: "https://github.com/Tir25/rudri-p-portfolio",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Coding ducks = LeetCode + CodePen + CSS Battles
+            Secure, TypeScript-first blogging and research-paper platform built
+            with Next.js and Supabase
           </TypographyP>
           <TypographyP className="font-mono ">
-            Coding Ducks is your coding dojo — where you level up your skills,
-            battle in real-time code duels, and earn badges like a true code
-            warrior. Track your progress, flex your brain, and climb the
-            leaderboard. Ready to quack the code?
+            A full-stack web application that lets authors publish blog posts and
+            upload research papers with secure storage and access policies. Built
+            in TypeScript and deployed to Vercel, with the backend powered by
+            Supabase (Postgres) and Row-Level Security for precise access
+            control.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Problems </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Tech Stack</TypographyH3>
           <p className="font-mono mb-2">
-            Solve coding problems similar to LeetCode, enhancing your
-            problem-solving skills across various languages.
+            <strong>Frontend:</strong> Next.js, React, TypeScript
+            <br />
+            <strong>Backend:</strong> Supabase (Postgres, Auth, Storage),
+            PLpgSQL (RLS / stored scripts)
+            <br />
+            <strong>Deployment:</strong> Vercel, Nixpacks, Procfile;
+            deployment automation via PowerShell/Bash scripts
+            <br />
+            <strong>Tools:</strong> Node.js, npm, GitHub
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/codingducks/problems.png`,
-              `${BASE_PATH}/codingducks/problem.png`,
+              "/Portfolio Website/Screenshot 2025-12-18 104213.png",
+              "/Portfolio Website/Screenshot 2025-12-18 104322.png",
+              "/Portfolio Website/Screenshot 2025-12-18 104352.png",
+              "/Portfolio Website/Screenshot 2025-12-18 104432.png",
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Core Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>Create, edit, and publish blog posts</li>
+            <li>Upload and manage research papers with secure storage</li>
+            <li>Role-based access and Row-Level Security for private data</li>
+            <li>Automated deployment & CI-friendly scripts</li>
+            <li>Security audit and database migration scripts included</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Security & Architecture</TypographyH3>
           <p className="font-mono mb-2">
-            Collaborate in real-time with others in a multiplayer coding
-            environment, just like CodePen but with a social twist.
+            Designed and implemented secure file storage and access control
+            using Supabase Storage and Row-Level Security policies. The platform
+            includes comprehensive security measures with RLS configured for both
+            storage and database, ensuring that uploads and paper access remain
+            secure and private. A complete security audit document is included
+            in the repository.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/ducklets.png`,
-              `${BASE_PATH}/codingducks/ducklet1.png`,
-              `${BASE_PATH}/codingducks/ducklet2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
-
+          <TypographyH3 className="my-4 mt-8">Deployment & Documentation</TypographyH3>
           <p className="font-mono mb-2">
-            Challenge yourself to create UI components with HTML/CSS/JS, and get
-            instant feedback with an automated similarity scoring.
+            The project includes comprehensive deployment documentation and
+            automation scripts (PowerShell/.bat scripts, Procfile, and
+            Nixpacks/render configurations). Database migration scripts ensure
+            reproducible schema setup, and the live app is deployed on Vercel
+            with automated CI/CD workflows.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/css-battles.png`,
-              `${BASE_PATH}/codingducks/css-battle.png`,
-              `${BASE_PATH}/codingducks/css-battle2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
-          <p className="font-mono mb-2">
-            Organize or participate in coding competitions. Successfully used to
-            host three contests during college.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} />
-          <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
-          <p className="font-mono mb-2">
-            Test and execute your code instantly in my versatile online code
-            runner.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} />
-          <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Track your progress, earn badges, and climb the rankings with
-            detailed user profiles and activity tracking.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/users.png`,
-              `${BASE_PATH}/codingducks/user.png`,
-            ]}
-          />
+          <TypographyH3 className="my-4 mt-8">Key Highlights</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>
+              Built a full-stack Blog & Research Papers platform using Next.js
+              (TypeScript) and Supabase (Postgres, Auth, Storage)
+            </li>
+            <li>
+              Implemented Row-Level Security to protect user uploads and enforce
+              access policies
+            </li>
+            <li>
+              Deployed production app to Vercel with automated scripts and
+              delivery documentation
+            </li>
+            <li>
+              Created database migration scripts and performed a security audit
+            </li>
+            <li>
+              TypeScript-first frontend with accessibility and responsive layout
+              priorities
+            </li>
+          </ul>
         </div>
       );
     },
   },
   {
-    id: "couponluxury",
-    category: "Coupon site",
-    title: "Coupon Luxury",
-    src: "/assets/projects-screenshots/couponluxury/landing.png",
-    screenshots: ["1.png", "2.png", "3.png", "4.png", "5.png"],
-    live: "https://www.youtube.com/@heygenzcoder",
+    id: "bus-tracking-system",
+    category: "Transportation System",
+    title: "BTS — University Bus Tracking System",
+    src: "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
+    screenshots: [
+      "WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
+      "WhatsApp Image 2025-11-04 at 7.47.07 AM.jpeg",
+      "WhatsApp Image 2025-11-04 at 7.51.57 AM.jpeg",
+      "WhatsApp Image 2025-11-04 at 8.02.41 AM.jpeg",
+      "WhatsApp Image 2025-11-04 at 8.02.42 AM.jpeg",
+    ],
+    live: "https://bts-frontend-navy.vercel.app",
+    github: "https://github.com/Tir25/BTS",
     skills: {
       frontend: [
-        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.ts,
         PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.vue,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
       ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
         PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.node,
         PROJECT_SKILLS.docker,
       ],
     },
     get content(): JSX.Element {
       return (
         <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Real-time bus-tracking web app that helps students find and follow
+            university buses across cities and towns
+          </TypographyP>
           <TypographyP className="font-mono ">
-            CouponLuxury is your go-to destination for snagging the best deals
-            without lifting a finger. Whether you&apos;re hunting for the latest
-            discounts or trying to save a buck at your favorite stores,
-            CouponLuxury&apos;s got you covered.
+            BTS provides students with a map-based UI to view live bus
+            locations, estimated arrival times, and route details. Built with
+            TypeScript and modern React tooling, the system integrates a
+            Postgres-backed datastore and deployment automation for a
+            production-ready experience.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-4">
-            As soon as you land, boom! You&apos;re greeted with the freshest
-            coupons and top-tier deals that&apos;ll make your wallet happy.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/landing.png`]} />
-          <TypographyH3 className="my-4 ">Stores</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Tech Stack</TypographyH3>
           <p className="font-mono mb-2">
-            Dive into a comprehensive list of stores, each packed with exclusive
-            deals and discounts. It&apos;s like having a VIP pass to every sale
-            in town.
+            <strong>Frontend:</strong> React, TypeScript (Next.js), Tailwind CSS
+            <br />
+            <strong>Backend & DB:</strong> Postgres (PLpgSQL), real-time updates
+            via WebSockets or realtime DB
+            <br />
+            <strong>Deployment & Infra:</strong> Vercel (frontend), Docker,
+            Shell scripts
+            <br />
+            <strong>Tools:</strong> Node.js, npm/Yarn, Git, MIT license
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/couponluxury/stores.png`,
-              `${BASE_PATH}/couponluxury/store.png`,
+              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
+              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.47.07 AM.jpeg",
+              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.51.57 AM.jpeg",
+              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.41 AM.jpeg",
+              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.42 AM.jpeg",
             ]}
           />
-          <TypographyH3 className="my-4 mt-8">Categories</TypographyH3>
-
+          <TypographyH3 className="my-4 mt-8">Core Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>Interactive map showing live bus locations and routes</li>
+            <li>Estimated arrival times and stop lookup</li>
+            <li>Route and vehicle management (admin features)</li>
+            <li>Postgres-backed persistence with PLpgSQL scripts</li>
+            <li>Containerized/deployable with Docker and shell scripts</li>
+            <li>Real-time location updates with minimal latency</li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Key Highlights</TypographyH3>
           <p className="font-mono mb-2">
-            Whatever you&apos;re into—fashion, tech, food—you&apos;ll find it
-            neatly organized here. No more endless scrolling; just pick a
-            category and get the best offers instantly.
+            This bus tracking system was developed for my university to provide
+            students with real-time vehicle locations and schedule visibility.
+            The frontend is implemented with TypeScript and modern React tooling
+            and deployed on Vercel for fast, reliable delivery. The backend uses
+            a Postgres-based datastore (PLpgSQL present) for persistent route and
+            telemetry data.
           </p>
-          <SlideShow images={[`${BASE_PATH}/couponluxury/categories.png`]} />
-          <TypographyH3 className="my-4 mt-8">Custom CMS </TypographyH3>
-          <p className="font-mono mb-2">
-            Powered by Vue.js, this bad boy allows us to keep the content
-            dynamic and up-to-date. From flash sales to limited-time offers, my
-            CMS ensures everything&apos;s live and relevant.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/couponluxury/cms-1.png`,
-              `${BASE_PATH}/couponluxury/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-5">
-            Plus, I&apos;ve sprinkled in some extra magic like personalized
-            deal recommendations, user-friendly search features, and a sleek,
-            responsive design that works like a charm on any device.
-          </p>
-          <p className="font-mono mb-2">
-            CouponLuxury isn&apos;t just a website; it&apos;s your personal deal-hunting
-            assistant, ensuring you never miss out on a bargain!
-          </p>
-          {/* <TypographyP className="my-4 mt-8">
-          <strong>Misc:</strong>
-          Hosted not one, not two, but THREE coding contests (Codemacha) during
-          college. Safe to say, Coding Ducks passed the vibe check.
-        </TypographyP>
-        <TypographyP className="my-4 mt-8">
-          <strong>Target Audience:</strong>
-          For all the novice coders out there ready to make their mark.
-        </TypographyP> */}
+          <TypographyH3 className="my-4 mt-8">Technical Achievements</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>
+              Implemented a scalable frontend to render high-frequency location
+              updates with minimal latency
+            </li>
+            <li>
+              Integrated a Postgres datastore and authored PLpgSQL scripts for
+              reliable route and telemetry storage
+            </li>
+            <li>
+              Added deployment workflows and containerization to ensure
+              reproducible environments for staging and production
+            </li>
+            <li>
+              Built a real-time Bus Tracking System using TypeScript and React;
+              integrated a Postgres backend (PLpgSQL) and deployed the frontend
+              to Vercel
+            </li>
+            <li>
+              Implemented mapping and live vehicle updates to improve campus
+              transportation visibility for students
+            </li>
+          </ul>
         </div>
       );
     },
   },
   {
-    id: "the-booking-desk",
-    category: "Travel",
-    title: "The Booking Desk",
-    src: "/assets/projects-screenshots/the-booking-desk/landing.png",
-    screenshots: ["1.png"],
-    live: "https://www.youtube.com/@heygenzcoder",
+    id: "vr-nextgen",
+    category: "Company Website",
+    title: "VR NEXTGEN — Company Website",
+    src: "/VR-NEXTGEN Consultancy website/Screenshot 2025-12-18 111846.png",
+    screenshots: [
+      "Screenshot 2025-12-18 111846.png",
+      "Screenshot 2025-12-18 111935.png",
+      "Screenshot 2025-12-18 112021.png",
+      "Screenshot 2025-12-18 112103.png",
+      "Screenshot 2025-12-18 112137.png",
+      "Screenshot 2025-12-18 112217.png",
+    ],
+    live: "https://vrnextgensolutions.com",
+    github: "https://github.com/Tir25/VR-NEXTGEN",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
         PROJECT_SKILLS.next,
-        PROJECT_SKILLS.aceternity,
+        PROJECT_SKILLS.react,
         PROJECT_SKILLS.tailwind,
-      ],
-      backend: [PROJECT_SKILLS.sanity],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            The Booking Desk is your ultimate travel consultation hub, designed
-            to turn your wanderlust dreams into reality. With a focus on smooth
-            and visually captivating animations, navigating the site feels like
-            a breeze—it&apos;s almost as if the destinations are calling you.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <p className="font-mono mb-2 mt-8">
-            A sleek, modern interface greets you, featuring the latest travel
-            tips, deals, and must-visit spots around the globe.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/the-booking-desk/landing.png`]} />
-          <TypographyH3 className="my-4 mt-8">Blogs</TypographyH3>
-          <p className="font-mono mb-2">
-            Dive into the curated articles written by travel experts. Whether
-            you&apos;re looking for hidden gems or travel hacks, our blog section has
-            you covered.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/blogs.png`,
-              `${BASE_PATH}/the-booking-desk/blog.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Sanity CMS</TypographyH3>
-
-          <p className="font-mono mb-2">
-            Keeping everything fresh and up-to-date, I&apos;ve integrated Sanity CMS
-            to manage all the content with ease, ensuring you always get the
-            latest and greatest information.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/the-booking-desk/cms-1.png`,
-              `${BASE_PATH}/the-booking-desk/cms-2.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 my-8">
-            With a stunning 100% score on Lighthouse, The Booking Desk isn&apos;t
-            just beautiful—it&apos;s built to perform. Whether you&apos;re planning your
-            next adventure or just daydreaming, our site delivers a top-notch
-            experience that&apos;s both informative and enjoyable.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "portfolio",
-    category: "Portfolio",
-    title: "My Portfolio",
-    src: "/assets/projects-screenshots/ghostchat/1.png",
-    screenshots: ["1.png"],
-    live: "https://www.youtube.com/@heygenzcoder",
-    github: "https://www.youtube.com/@heygenzcoder",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.shadcn,
-        PROJECT_SKILLS.aceternity,
-        PROJECT_SKILLS.framerMotion,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.spline,
       ],
       backend: [],
     },
     get content() {
       return (
         <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Modern TypeScript + Next.js site with performance-first design and
+            polished UX
+          </TypographyP>
           <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
+            A marketing site for VR NEXTGEN focused on fast load times,
+            responsive media, and engaging UX. Built with Next.js and TypeScript,
+            the site includes custom image optimization and smooth page
+            transitions and is hosted on Vercel.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
-          </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Tech Stack</TypographyH3>
           <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
+            <strong>Frontend:</strong> Next.js + React + TypeScript
+            <br />
+            <strong>Styling:</strong> CSS (custom transitions & responsive
+            layout)
+            <br />
+            <strong>Optimization:</strong> Next.js Image + custom image
+            optimization components
+            <br />
+            <strong>Deployment:</strong> Vercel
+            <br />
+            <strong>Tooling:</strong> Node.js, npm/Yarn, Git, branch-based
+            feature development
           </p>
           <SlideShow
             images={[
-              `${BASE_PATH}/ghostchat/1.png`,
-              `${BASE_PATH}/ghostchat/2.png`,
+              "/VR-NEXTGEN Consultancy website/Screenshot 2025-12-18 111846.png",
+              "/VR-NEXTGEN Consultancy website/Screenshot 2025-12-18 111935.png",
+              "/VR-NEXTGEN Consultancy website/Screenshot 2025-12-18 112021.png",
+              "/VR-NEXTGEN Consultancy website/Screenshot 2025-12-18 112103.png",
+              "/VR-NEXTGEN Consultancy website/Screenshot 2025-12-18 112137.png",
+              "/VR-NEXTGEN Consultancy website/Screenshot 2025-12-18 112217.png",
             ]}
           />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Core Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>
+              SEO-friendly static/dynamic pages with server-side rendering or
+              SSG (Next.js)
+            </li>
+            <li>
+              Responsive images with custom optimization component for
+              performance
+            </li>
+            <li>
+              Smooth scroll prompts and animated UI elements to improve
+              engagement
+            </li>
+            <li>
+              Active code quality & TypeScript type-safety improvements
+            </li>
+            <li>
+              Vercel-optimized configuration and deployment fixes
+            </li>
+            <li>
+              Optimized media assets and refined UX interactions
+            </li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Key Highlights</TypographyH3>
           <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
+            I developed a modern, performance-first company site for VR NEXTGEN
+            solutions using a TypeScript-first Next.js stack. The project
+            emphasizes responsive design, optimized media assets, and refined UX
+            interactions such as scroll prompts and animated transitions. I
+            implemented image optimization components and resolved
+            deployment-specific issues (Vercel) to ensure reliable production
+            builds.
           </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/ghostchat/1.png`,
-              `${BASE_PATH}/ghostchat/1.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
-          </p>
+          <TypographyH3 className="my-4 mt-8">Technical Achievements</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>
+              Built a performance-optimized marketing website for VR NEXTGEN
+              using Next.js and TypeScript
+            </li>
+            <li>
+              Implemented responsive image optimization and UX enhancements
+            </li>
+            <li>
+              Resolved production deployment issues (Vercel compatibility) and
+              implemented component-level TypeScript fixes
+            </li>
+            <li>
+              Created custom image optimization components (OptimizedImage,
+              OptimizedWhatWeDoImage) with responsive sizes
+            </li>
+            <li>
+              Added smooth scroll prompts, animated callouts, and improved
+              section transitions for better user engagement
+            </li>
+            <li>
+              Fixed Next.js Image usage to resolve Vercel deployment issues and
+              improved build reliability
+            </li>
+          </ul>
         </div>
       );
     },
   },
   {
-    id: "ghostchat",
-    category: "Anonymous chat",
-    title: "GhostChat",
-    src: "/assets/projects-screenshots/ghostchat/1.png",
-    screenshots: ["1.png", "2.png", "3.png", "4.png"],
-    live: "https://www.youtube.com/@heygenzcoder",
-    github: "https://www.youtube.com/@heygenzcoder",
+    id: "mantro",
+    category: "Agency Website",
+    title: "MANTRO — Modern Next.js App",
+    src: "/MANTRO-STUDIO/Screenshot 2025-12-18 112944.png",
+    screenshots: [
+      "Screenshot 2025-12-18 112944.png",
+      "Screenshot 2025-12-18 113049.png",
+      "Screenshot 2025-12-18 113135.png",
+      "Screenshot 2025-12-18 113225.png",
+      "Screenshot 2025-12-18 113256.png",
+    ],
+    live: "https://mantro-1kmb.vercel.app",
+    github: "https://github.com/Tir25/man_tro",
     skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.chakra],
-      backend: [PROJECT_SKILLS.supabase],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Ghostchat is your go-to spot for sending anonymous messages without
-            leaving a trace. Powered by Supabase, it&apos;s all about keeping things
-            low-key and secure. Whether you&apos;re sharing secrets, giving feedback,
-            or just having some fun, Ghostchat ensures your identity stays
-            hidden, while your voice is heard. Say what you want, without the
-            worry.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/ghostchat/1.png`,
-              `${BASE_PATH}/ghostchat/2.png`,
-              `${BASE_PATH}/ghostchat/3.png`,
-              `${BASE_PATH}/ghostchat/4.png`,
-            ]}
-          />
-        </div>
-      );
-    },
-  },
-  {
-    id: "jra",
-    category: "Result analyzer",
-    title: "JNTUA Results Analyzer",
-    src: "/assets/projects-screenshots/jra/1.png",
-    screenshots: ["1.png"],
-    live: "https://www.youtube.com/@heygenzcoder",
-    skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.vue],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.docker,
+      frontend: [
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
       ],
+      backend: [],
     },
     get content() {
       return (
         <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            TypeScript-first component-driven Next.js project styled with Tailwind
+            CSS and production-ready configs
+          </TypographyP>
           <TypographyP className="font-mono ">
-            JNTUA Results Analyzer was a revolutionary tool designed to simplify
-            and enhance the experience of accessing academic results. It served
-            as a powerful proxy between the JNTUA university results website and
-            its users, offering a range of features that made result analysis
-            faster and more efficient. Here&apos;s what made it stand out:
+            A modular Next.js application built with TypeScript and Tailwind CSS.
+            The codebase emphasizes maintainability (components, hooks, lib
+            folders), production readiness (next.config.js, PostCSS), and security
+            (dependency patching workflow).
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow images={[`${BASE_PATH}/jra/1.png`]} />
-          <TypographyH3 className="my-4 mt-8">
-            Effortless Results Retrieval
-          </TypographyH3>
-          {/* Effortless Results Retrieval: */}
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Search all your results using a single roll number, eliminating
-              the tedious task of sifting through thousands of rows on the
-              official site.
+          <TypographyH3 className="my-4 mt-8">Tech Stack</TypographyH3>
+          <p className="font-mono mb-2">
+            <strong>Framework:</strong> Next.js (TypeScript)
+            <br />
+            <strong>Languages:</strong> TypeScript, JavaScript, CSS
+            <br />
+            <strong>Styling:</strong> Tailwind CSS + PostCSS
+            <br />
+            <strong>Tooling:</strong> ESLint, Node.js, npm
+            <br />
+            <strong>Hosting / CI:</strong> Vercel (project created from Vercel
+            starter, Vercel automated PR present)
+          </p>
+          <SlideShow
+            images={[
+              "/MANTRO-STUDIO/Screenshot 2025-12-18 112944.png",
+              "/MANTRO-STUDIO/Screenshot 2025-12-18 113049.png",
+              "/MANTRO-STUDIO/Screenshot 2025-12-18 113135.png",
+              "/MANTRO-STUDIO/Screenshot 2025-12-18 113225.png",
+              "/MANTRO-STUDIO/Screenshot 2025-12-18 113256.png",
+            ]}
+          />
+          <TypographyH3 className="my-4 mt-8">Core Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>
+              TypeScript-first, component-driven architecture (app + components
+              folders)
+            </li>
+            <li>Tailwind CSS for rapid, responsive UI development</li>
+            <li>
+              Modern Next.js features (app directory, optimized images & SSR/SSG
+              options)
+            </li>
+            <li>
+              Production-oriented config: next.config.js, PostCSS, Tailwind,
+              linting
+            </li>
+            <li>
+              Security-aware maintenance: automated Vercel patch for a critical RSC
+              vulnerability (evidence of dependency & security hygiene)
+            </li>
+            <li>
+              Component-based architecture with app/ and components/ folders for
+              scalable structure
             </li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">Class-Wise Results:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              class-wise results effortlessly by entering a roll number range.
-              No more manual searches or filtering.
+          <TypographyH3 className="my-4 mt-8">Key Highlights</TypographyH3>
+          <p className="font-mono mb-2">
+            man_tro is a modern Next.js application developed with a
+            TypeScript-first approach and Tailwind CSS for styling. The codebase
+            follows a component-driven structure (app/, components/, hooks/, lib/)
+            to keep UI and logic modular and maintainable. The project is prepared
+            for production deployments on Vercel and includes PostCSS and ESLint
+            configurations for consistent builds and code quality.
+          </p>
+          <TypographyH3 className="my-4 mt-8">Technical Achievements</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>
+              Developed a TypeScript-first Next.js application (component-driven)
+              using Tailwind CSS and PostCSS
+            </li>
+            <li>
+              Configured production-ready builds and linting for consistent code
+              quality
+            </li>
+            <li>
+              Maintained production hygiene with dependency/security patches
+              (Vercel automated PR to mitigate a React Server Components RCE
+              vulnerability)
+            </li>
+            <li>
+              Implemented component-driven architecture with proper separation of
+              concerns (app/, components/, hooks/, lib/ folders)
+            </li>
+            <li>
+              Set up Tailwind CSS and PostCSS for rapid, responsive UI development
+            </li>
+            <li>
+              Demonstrated security-first practices by actively monitoring and
+              applying critical security patches
             </li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">Faculty Features:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Faculty members could download batch results in Excel format,
-              making administrative tasks a breeze.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">
-            Enhanced Data Insights:
-          </TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Each result came with additional features including:
-              <ul className="list-disc font-mono ml-6">
-                <li>
-                  <strong>CGPA Calculations: </strong>Easily track your
-                  cumulative grade point average.
-                </li>
-                <li>
-                  <strong>Charts:</strong> Visualize your academic performance
-                  with comprehensive charts.
-                </li>
-                <li>
-                  <strong>Future Projections:</strong> Get insights into
-                  potential future outcomes based on current performance.
-                </li>
-                <li>
-                  <strong> Backlog Counts: </strong>Keep track of your backlog
-                  subjects at a glance.
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Performance:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              The application was significantly faster and more efficient than
-              the official site, providing a smoother user experience.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Downfall:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Unfortunately, as of May 2022, the tool stopped working due to the
-              introduction of CAPTCHA on the official JNTUA results site, which
-              disrupted the seamless functionality of the app. JNTUA Results
-              Analyzer transformed the way students and faculty interacted with
-              academic results, making it a must-have tool until its unexpected
-              shutdown.
-            </li>
-          </ul>
+          <TypographyH3 className="my-4 mt-8">Security & Maintenance</TypographyH3>
+          <p className="font-mono mb-2">
+            The repository demonstrates active security maintenance — an automated
+            Vercel patch for a React Server Components RCE vulnerability was
+            generated to keep dependencies safe. This shows evidence of dependency &
+            security hygiene, actively monitoring and applying patches, testing,
+            and keeping dependencies up-to-date.
+          </p>
         </div>
       );
     },

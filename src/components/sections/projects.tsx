@@ -17,11 +17,11 @@ import { cn } from "@/lib/utils";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
+    <section id="projects" className="max-w-7xl mx-auto md:h-[130vh] relative z-[2]">
       <Link href={"#projects"}>
         <h2
           className={cn(
-            "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16",
+            "bg-clip-text text-4xl text-center text-transparent md:text-7xl pt-16 relative z-[2]",
             "bg-gradient-to-b from-black/80 to-black/50",
             "dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-32"
           )}
@@ -47,11 +47,12 @@ const Modall = ({ project }: { project: Project }) => {
             style={{ aspectRatio: "3/2" }}
           >
             <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
+              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all object-cover"
               src={project.src}
               alt={project.title}
-              width={300}
-              height={300}
+              width={400}
+              height={267}
+              style={{ objectFit: "cover" }}
             />
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">

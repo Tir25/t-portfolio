@@ -11,53 +11,28 @@ import "@splidejs/react-splide/css";
 const PROJECTS = [
   {
     id: 1,
-    name: "Coding Ducks",
-    description: `Dive into CodingDucks, a fusion of CodePen's creative playground with LeetCode's problem-solving realm.
-Whether you're a newbie or a seasoned coder, join the community to paddle through coding adventures and let your
-creativity soar.`,
-    link: "https://www.youtube.com/@heygenzcoder",
+    name: "Rudri P — Blog & Research Papers Platform",
+    description: `A full-stack web application that lets authors publish blog posts and upload research papers with secure storage and access policies. Built in TypeScript and deployed to Vercel, with the backend powered by Supabase (Postgres) and Row-Level Security for precise access control.`,
+    link: "https://rudri-p-portfolio.vercel.app",
     images: [
-      "/assets/projects-screenshots/codingducks/1.png",
-      "/assets/projects-screenshots/codingducks/2.png",
-      "/assets/projects-screenshots/codingducks/3.png",
-      "/assets/projects-screenshots/codingducks/4.png",
-      "/assets/projects-screenshots/codingducks/5.png",
+      "/Portfolio Website/Screenshot 2025-12-18 104213.png",
+      "/Portfolio Website/Screenshot 2025-12-18 104322.png",
+      "/Portfolio Website/Screenshot 2025-12-18 104352.png",
+      "/Portfolio Website/Screenshot 2025-12-18 104432.png",
     ],
   },
   {
     id: 2,
-    name: "Ghost Chat",
-    description: `GhostChat is an anonymous messaging app that allows users to connect without revealing their identities. 
-Join the community for intriguing conversations and mysterious encounters.`,
-    link: "https://www.youtube.com/@heygenzcoder",
+    name: "BTS — University Bus Tracking System",
+    description: `Real-time bus-tracking web app that helps students find and follow university buses across cities and towns. Built with TypeScript and modern React tooling, the system integrates a Postgres-backed datastore for a production-ready experience.`,
+    link: "https://bts-frontend-navy.vercel.app",
     images: [
-      "/assets/projects-screenshots/ghostchat/1.png",
-      "/assets/projects-screenshots/ghostchat/2.png",
-      "/assets/projects-screenshots/ghostchat/3.png",
-      "/assets/projects-screenshots/ghostchat/4.png",
+      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
+      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.47.07 AM.jpeg",
+      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.51.57 AM.jpeg",
+      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.41 AM.jpeg",
+      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.42 AM.jpeg",
     ],
-  },
-  {
-    id: 3,
-    name: "Coupon Luxury",
-    description: `Welcome to CouponLuxury, your destination for exclusive discounts and savings. Explore the platform to find the
-best deals on luxury brands and products. Join our savvy community of shoppers and unlock access to premium coupons.`,
-    link: "https://www.youtube.com/@heygenzcoder",
-    images: [
-      "/assets/projects-screenshots/couponluxury/1.png",
-      "/assets/projects-screenshots/couponluxury/2.png",
-      "/assets/projects-screenshots/couponluxury/3.png",
-      "/assets/projects-screenshots/couponluxury/4.png",
-      "/assets/projects-screenshots/couponluxury/5.png",
-    ],
-  },
-  {
-    id: 4,
-    name: "JNTUA Results Analyser",
-    description: `the go-to app for JNTUA students, empowering them to analyze, compare, and view classwise results effortlessly.
-     Dive into your academic journey with ease, track your progress, and gain valuable insights.`,
-    link: "https://www.youtube.com/@heygenzcoder",
-    images: ["/assets/projects-screenshots/jra/1.png"],
   },
 ];
 function Page() {
