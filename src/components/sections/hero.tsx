@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { Button } from "../ui/button";
 import { File, Github, Linkedin } from "lucide-react";
 import {
@@ -18,7 +19,7 @@ const HeroSection = () => {
   const { isLoading } = usePreloader();
 
   return (
-    <section id="hero" className={cn("relative w-full h-screen")}>
+    <section id="hero" className={cn("relative w-full h-screen") }>
       <div className="grid md:grid-cols-2">
         <div
           className={cn(
@@ -81,19 +82,17 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    A Full Stack Developer
+                    A Software Developer
                   </p>
                 </BlurIn>
               </div>
               <div className="mt-8 md:ml-2 flex flex-col gap-3">
                 <Link
-                  href={
-                    "https://www.youtube.com/@heygenzcoder"
-                  }
+                  href={"https://www.youtube.com/@heygenzcoder"}
                   target="_blank"
                   className="flex-1"
                 >
-                  <BoxReveal delay={2} width="100%" >
+                  <BoxReveal delay={2} width="100%">
                     <Button className="flex items-center gap-2 w-full">
                       <File size={24} />
                       <p>Resume</p>
@@ -137,7 +136,29 @@ const HeroSection = () => {
             </>
           )}
         </div>
-        <div className="grid col-span-1"></div>
+        <div className="col-span-1 flex items-center justify-center px-8 md:px-0">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-white/15 bg-white/10 dark:bg-white/5 backdrop-blur-xl shadow-[0_25px_80px_rgba(15,23,42,0.7)]">
+            <Image
+              src="/Profile pic/IMG_20251119_193106.jpg"
+              alt={config.author}
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-x-4 bottom-4 flex flex-col gap-1 text-white">
+              <p className="text-xs uppercase tracking-[0.25em] text-zinc-300">
+                Software Developer
+              </p>
+              <p className="text-xl font-semibold tracking-tight">
+                {config.author}
+              </p>
+              <p className="text-[11px] text-zinc-300">
+                Building human-centered digital experiences that feel as good as they look.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="absolute bottom-10 left-[50%] translate-x-[-50%]">
         <ScrollDownIcon />
