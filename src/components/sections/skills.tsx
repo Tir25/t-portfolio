@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="w-full h-screen md:h-[150dvh]">
-      <div className="top-[70px] sticky mb-96">
+    <section id="skills" className="w-full min-h-screen md:h-[150dvh] pt-16">
+      <div className="top-[80px] md:top-[96px] sticky mb-96">
         <Link href={"#skills"}>
           <BoxReveal width="100%">
             <h2

@@ -19,14 +19,13 @@ const HeroSection = () => {
   const { isLoading } = usePreloader();
 
   return (
-    <section id="hero" className={cn("relative w-full h-screen") }>
+    <section id="hero" className={cn("relative z-[2] w-full min-h-screen pb-20")}>
       <div className="grid md:grid-cols-2">
         <div
           className={cn(
-            "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
-            "col-span-1",
+            "col-span-1 relative z-[2]",
             "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pt-0 sm:pb-16 md:p-20 lg:p-24 xl:p-28"
+            "pt-24 pb-8 md:pt-28 md:pb-16 px-4 md:px-20 lg:px-24"
           )}
         >
           {!isLoading && (
@@ -87,18 +86,15 @@ const HeroSection = () => {
                 </BlurIn>
               </div>
               <div className="mt-8 md:ml-2 flex flex-col gap-3">
-                <Link
-                  href={"https://www.youtube.com/@heygenzcoder"}
-                  target="_blank"
-                  className="flex-1"
-                >
-                  <BoxReveal delay={2} width="100%">
-                    <Button className="flex items-center gap-2 w-full">
-                      <File size={24} />
-                      <p>Resume</p>
-                    </Button>
-                  </BoxReveal>
-                </Link>
+                <BoxReveal delay={2} width="100%">
+                  <Button
+                    className="flex items-center gap-2 w-full cursor-not-allowed opacity-60"
+                    disabled
+                  >
+                    <File size={24} />
+                    <p>Resume (Coming Soon)</p>
+                  </Button>
+                </BoxReveal>
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
@@ -136,7 +132,7 @@ const HeroSection = () => {
             </>
           )}
         </div>
-        <div className="col-span-1 flex items-center justify-center px-8 md:px-0">
+        <div className="col-span-1 flex items-center justify-center px-8 md:px-0 mt-8 md:mt-0">
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-white/15 bg-white/10 dark:bg-white/5 backdrop-blur-xl shadow-[0_25px_80px_rgba(15,23,42,0.7)]">
             <Image
               src="/Profile pic/IMG_20251119_193106.jpg"
