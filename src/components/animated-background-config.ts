@@ -103,7 +103,21 @@ export const getKeyboardState = ({
   isMobile: boolean;
 }) => {
   const baseTransform = STATES[section][isMobile ? "mobile" : "desktop"];
-  const scaleOffset = +(window.devicePixelRatio - 0.4).toFixed(1)
+  // On high-DPI screens we were shrinking the keyboard using devicePixelRatio,
+  // which made it too small and hard to tap on mobile.
+  //
+  // To keep the keyboard large and more clickable on phones, we:
+  // - return the mobile scale as-is (no DPR downscaling)
+  // - only apply DPR-based scaling on desktop where precision is higher
+  if (typeof window === "undefined") {
+    return baseTransform;
+  }
+
+  if (isMobile) {
+    return baseTransform;
+  }
+
+  const scaleOffset = +(window.devicePixelRatio - 0.4).toFixed(1) || 1;
 
   return {
     ...baseTransform,

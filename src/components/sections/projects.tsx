@@ -46,14 +46,26 @@ const Modall = ({ project }: { project: Project }) => {
             className="relative w-[400px] h-auto rounded-lg overflow-hidden"
             style={{ aspectRatio: "3/2" }}
           >
-            <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all object-cover"
-              src={project.src}
-              alt={project.title}
-              width={400}
-              height={267}
-              style={{ objectFit: "cover" }}
-            />
+            {project.videoCover ? (
+              <video
+                className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
+                src={project.videoCover}
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ objectFit: "contain", backgroundColor: "#0a0a0a" }}
+              />
+            ) : (
+              <Image
+                className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all object-cover"
+                src={project.src}
+                alt={project.title}
+                width={400}
+                height={267}
+                style={{ objectFit: "cover" }}
+              />
+            )}
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">
                 <div className="text-lg text-left">{project.title}</div>

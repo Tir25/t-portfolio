@@ -23,15 +23,13 @@ const PROJECTS = [
   },
   {
     id: 2,
-    name: "BTS — University Bus Tracking System",
-    description: `Real-time bus-tracking web app that helps students find and follow university buses across cities and towns. Built with TypeScript and modern React tooling, the system integrates a Postgres-backed datastore for a production-ready experience.`,
-    link: "https://bts-frontend-navy.vercel.app",
+    name: "BTS — UniTrack",
+    description: `A responsive single-page web app for live transit tracking and management — featuring a real-time map with bus position streaming, admin CRUD dashboard, and PWA support. Built with JavaScript and deployed to Firebase Hosting.`,
+    link: "https://university-bus-tracker-app.web.app/",
     images: [
-      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
-      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.47.07 AM.jpeg",
-      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.51.57 AM.jpeg",
-      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.41 AM.jpeg",
-      "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.42 AM.jpeg",
+      "/BTS-System/screenshot-1.png",
+      "/BTS-System/screenshot-2.png",
+      "/BTS-System/screenshot-3.png",
     ],
   },
 ];

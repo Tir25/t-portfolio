@@ -228,6 +228,7 @@ export type Project = {
   category: string;
   title: string;
   src: string;
+  videoCover?: string;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
   content: React.ReactNode | any;
@@ -349,107 +350,117 @@ const projects: Project[] = [
   },
   {
     id: "bus-tracking-system",
-    category: "Transportation System",
-    title: "BTS — University Bus Tracking System",
-    src: "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
+    category: "Real-Time PWA",
+    title: "BTS — UniTrack",
+    src: "/BTS-System/screenshot-1.png",
+    videoCover: "/BTS-System/demo-video.mp4",
     screenshots: [
-      "WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
-      "WhatsApp Image 2025-11-04 at 7.47.07 AM.jpeg",
-      "WhatsApp Image 2025-11-04 at 7.51.57 AM.jpeg",
-      "WhatsApp Image 2025-11-04 at 8.02.41 AM.jpeg",
-      "WhatsApp Image 2025-11-04 at 8.02.42 AM.jpeg",
+      "screenshot-1.png",
+      "screenshot-2.png",
+      "screenshot-3.png",
     ],
-    live: "https://bts-frontend-navy.vercel.app",
+    live: "https://university-bus-tracker-app.web.app/",
     github: "https://github.com/Tir25/BTS",
     skills: {
       frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.js,
         PROJECT_SKILLS.react,
         PROJECT_SKILLS.tailwind,
       ],
       backend: [
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.docker,
+        PROJECT_SKILLS.firebase,
       ],
     },
     get content(): JSX.Element {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Real-time bus-tracking web app that helps students find and follow
-            university buses across cities and towns
+            A responsive single-page web app for live transit tracking and
+            management — featuring a real-time map with bus position streaming,
+            admin CRUD dashboard, and PWA support
           </TypographyP>
-          <TypographyP className="font-mono ">
-            BTS provides students with a map-based UI to view live bus
-            locations, estimated arrival times, and route details. Built with
-            TypeScript and modern React tooling, the system integrates a
-            Postgres-backed datastore and deployment automation for a
-            production-ready experience.
+          <TypographyP className="font-mono">
+            BTS is a production-oriented PWA designed to provide operators and
+            riders with real-time transit data and administrative controls. The
+            app streams vehicle locations to an interactive map, uses visual cues
+            to indicate stale data, and offers a mobile-optimized experience so
+            users can access the map offline or install it as an app.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">Tech Stack</TypographyH3>
           <p className="font-mono mb-2">
-            <strong>Frontend:</strong> React, TypeScript (Next.js), Tailwind CSS
+            <strong>Core:</strong> JavaScript (83.7%), CSS (15.7%), HTML (0.6%)
             <br />
-            <strong>Backend & DB:</strong> Postgres (PLpgSQL), real-time updates
-            via WebSockets or realtime DB
+            <strong>Framework:</strong> Vite, React-style modular components & hooks
             <br />
-            <strong>Deployment & Infra:</strong> Vercel (frontend), Docker,
-            Shell scripts
+            <strong>Backend:</strong> Firebase (Firestore for real-time streaming)
             <br />
-            <strong>Tools:</strong> Node.js, npm/Yarn, Git, MIT license
+            <strong>Maps:</strong> Interactive map library with geocoding & address search
+            <br />
+            <strong>PWA:</strong> Service worker with navigateFallback for SPA routing
+            <br />
+            <strong>Deployment:</strong> Firebase Hosting
           </p>
           <SlideShow
             images={[
-              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.44.07 AM.jpeg",
-              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.47.07 AM.jpeg",
-              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 7.51.57 AM.jpeg",
-              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.41 AM.jpeg",
-              "/Bus Tracking System/WhatsApp Image 2025-11-04 at 8.02.42 AM.jpeg",
+              "/BTS-System/screenshot-1.png",
+              "/BTS-System/screenshot-2.png",
+              "/BTS-System/screenshot-3.png",
             ]}
           />
           <TypographyH3 className="my-4 mt-8">Core Features</TypographyH3>
           <ul className="list-disc ml-6 font-mono mb-2">
-            <li>Interactive map showing live bus locations and routes</li>
-            <li>Estimated arrival times and stop lookup</li>
-            <li>Route and vehicle management (admin features)</li>
-            <li>Postgres-backed persistence with PLpgSQL scripts</li>
-            <li>Containerized/deployable with Docker and shell scripts</li>
-            <li>Real-time location updates with minimal latency</li>
+            <li>Live tracking: buses on an interactive map with auto-updating "time ago" indicators and stale detection</li>
+            <li>Real-time streaming: positions update frequently via Firestore</li>
+            <li>User location: shows user location marker + accuracy circle</li>
+            <li>Map features: destination management with map picker and address search/geocoding</li>
+            <li>Admin dashboard: production-grade CRUD for buses, routes, schedules, analytics</li>
+            <li>Scheduling: templates for recurring schedules and driver management</li>
+            <li>PWA support: service worker configured for offline-first SPA routing</li>
+            <li>Mobile-first: components optimized for mobile breakpoints (480px)</li>
           </ul>
-          <TypographyH3 className="my-4 mt-8">Key Highlights</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Architecture & Design</TypographyH3>
           <p className="font-mono mb-2">
-            This bus tracking system was developed for my university to provide
-            students with real-time vehicle locations and schedule visibility.
-            The frontend is implemented with TypeScript and modern React tooling
-            and deployed on Vercel for fast, reliable delivery. The backend uses
-            a Postgres-based datastore (PLpgSQL present) for persistent route and
-            telemetry data.
+            Component-based SPA with modular React components (HeroSection, FeaturesSection,
+            StatsBar, AnimatedBackground, BusMap, TrackingPage). Custom hooks separate
+            concerns (useTimeAgo, useUserLocation), promoting reuse and testability.
+            Real-time data flows from Firestore to front-end markers with PWA layers
+            handling caching and offline routing.
           </p>
-          <TypographyH3 className="my-4 mt-8">Technical Achievements</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Challenges & Solutions</TypographyH3>
           <ul className="list-disc ml-6 font-mono mb-2">
             <li>
-              Implemented a scalable frontend to render high-frequency location
-              updates with minimal latency
+              <strong>Streaming + SW caching:</strong> Removed Firestore from service worker
+              cache and adjusted navigateFallback to index.html, ensuring live streaming
+              works while preserving PWA routing
             </li>
             <li>
-              Integrated a Postgres datastore and authored PLpgSQL scripts for
-              reliable route and telemetry storage
+              <strong>Map UI reliability:</strong> Fixed flexbox height inheritance and
+              refactored tracking into modular components for consistent rendering
             </li>
             <li>
-              Added deployment workflows and containerization to ensure
-              reproducible environments for staging and production
+              <strong>Stale data detection:</strong> Added stale-bus detection with visual
+              (amber) markers and auto-refreshing time-ago indicator
+            </li>
+          </ul>
+          <TypographyH3 className="my-4 mt-8">Key Highlights</TypographyH3>
+          <ul className="list-disc ml-6 font-mono mb-2">
+            <li>
+              Full-stack front-end engineer: design + implementation of modular
+              landing and tracking components
             </li>
             <li>
-              Built a real-time Bus Tracking System using TypeScript and React;
-              integrated a Postgres backend (PLpgSQL) and deployed the frontend
-              to Vercel
+              Built reusable Icon system and core hooks for real-time UI behavior
             </li>
             <li>
-              Implemented mapping and live vehicle updates to improve campus
-              transportation visibility for students
+              Implemented live map UX (markers, stale detection, auto-refresh time indicators)
+              and admin CRUD flows
+            </li>
+            <li>
+              Configured PWA service worker for SPA routing and offline-first experience
+            </li>
+            <li>
+              Optimized for mobile breakpoints and accessibility
             </li>
           </ul>
         </div>
